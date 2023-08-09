@@ -25,7 +25,7 @@ environment {
                 echo "--------Unit test completed------------"
             }
         }
-#        stage('SonarQube analysis') {
+        stage('SonarQube analysis') {
         environment{
             scannerHome = tool 'valaxy-sonar-scanner'
         }
@@ -35,7 +35,7 @@ environment {
             }
         }
         }
-#        stage("Quality Gate"){
+        stage("Quality Gate"){
            steps{
                script{
                timeout(time: 1, unit: 'HOURS') { // Just in case something goes wrong, pipeline will be killed after a timeout
